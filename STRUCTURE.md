@@ -1,30 +1,23 @@
-web-project/
-├─ README.md # krátký popis projektu + instrukce pro běh
-├─ /public # veřejně dostupné soubory (pokud používáte server)
-│ └─ index.html
+kocour-web/
+├─ README.md               # Krátký popis + instrukce pro lokální spuštění
 │
-├─ /assets
-│ ├─ /css
-│ │ └─ styles.css # hlavní CSS (buildovaný Tailwind nebo vlastní)
-│ ├─ /js
-│ │ ├─ main.js # inicializace, společné funkce
-│ │ ├─ about.js # načítání about JSON
-│ │ ├─ shiba.js # načítání plemeno JSON
-│ │ ├─ puppies.js # načítání puppies JSON a generování karet
-│ │ └─ contact.js # odesílání formuláře (AJAX)
-│ └─ /img
-│ ├─ /about
-│ ├─ /shiba
-│ └─ /puppies
+├─ index.html              # Hlavní a jediná stránka webu (one-page)
 │
-├─ /data
-│ ├─ about.json
-│ ├─ shiba.json
-│ ├─ conditions.json
-│ ├─ contact.json
-│ └─ puppies.json
+├─ /assets                   # Statické soubory (styly, skripty, obrázky)
+│  ├─ /css
+│  │  └─ style.css          # Vlastní CSS styly a responzivita
+│  │
+│  ├─ /js
+│  │  ├─ main.js            # Inicializace, plynulé scrollování, navigace
+│  │  └─ data-loader.js     # Skript pro načítání a vykreslení dat z JSONu
+│  │
+│  └─ /img                   # Veškerá grafika a obrázky
+│     ├─ logo.png           # Logo pivovaru
+│     ├─ hero-bg.jpg        # Obrázek na pozadí úvodní sekce
+│     ├─ /piva              # Fotky jednotlivých piv (pro karty)
+│     └─ /akce              # Plakáty/fotky pro sekci Akce
 │
-├─ /api
-│ └─ getPuppies.php # endpoint vracející puppies.json
-│
-└─ /docs # dokumentace
+└─ /data                     # Zde budou uložena strukturovaná data
+   ├─ piva.json             # Detailní data pro sekci "Výběr nápojů"
+   ├─ akce.json             # Data o nadcházejících událostech
+   └─ ubytovani.json        # Volitelné, data o dostupnosti nebo cenách
