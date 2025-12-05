@@ -20,4 +20,4 @@ kocour-web/
 └─ /data                     # Zde budou uložena strukturovaná data
    ├─ piva.json             # Detailní data pro sekci "Výběr nápojů"
    ├─ akce.json             # Data o nadcházejících událostech
-   └─ ubytovani.json        # Volitelné, data o dostupnosti nebo cenác
+   └─ ubytovani.json        # Volitelné, data o dostupnosti nebo cenách
