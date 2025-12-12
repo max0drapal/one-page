@@ -1,1 +1,115 @@
-
+{
+  "metadata": {
+    "project_name": "Pivovar Kocour",
+    "author": "Max Drápal",
+    "description": "Webové představení pivovaru Kocour. One-page web s interaktivním a přehledným obsahem zaměřeným na nabídku, akce a důvody k návštěvě.",
+    "target_audience": "Obyvatelé Varnsdorfu a milovníci piva.",
+    "is_registration_enabled": true
+  },
+  "navigation": [
+    {
+      "id": "o_nas",
+      "title": "O Nás"
+    },
+    {
+      "id": "nabidka",
+      "title": "Piva a Limonády"
+    },
+    {
+      "id": "ubytovani",
+      "title": "Ubytování"
+    },
+    {
+      "id": "akce",
+      "title": "Akce"
+    },
+    {
+      "id": "kontakty",
+      "title": "Kontakty"
+    }
+  ],
+  "sections": {
+    "o_nas": {
+      "headline": "Pivovar Kocour: Kde se pivo vaří s láskou",
+      "content": "Zde přijde textová sekce O NÁS. Popište historii pivovaru, filozofii a proč je Pivovar Kocour jedinečný (3–5 odstavců textu)."
+    },
+    "nabidka": {
+      "headline": "Naše piva a nealko",
+      "beers": [
+        {
+          "name": "Světlý ležák (Příklad)",
+          "type": "ležák",
+          "alc_vol": "4.8%",
+          "ibu": 35,
+          "description": "Klasický český ležák, plná chuť a řízná hořkost. Ideální pro každou příležitost."
+        },
+        {
+          "name": "IPA (Příklad)",
+          "type": "IPA",
+          "alc_vol": "6.5%",
+          "ibu": 60,
+          "description": "Silně chmelené pivo s citrusovými a tropickými tóny. Pro ty, kteří se nebojí hořkosti."
+        }
+        // Zde doplň další piva
+      ],
+      "soft_drinks": [
+        {
+          "name": "Domácí malinová limonáda",
+          "description": "Osvěžující limonáda z čerstvých malin."
+        }
+        // Zde doplň další limonády
+      ]
+    },
+    "ubytovani": {
+      "headline": "Odpočinek po poctivém pivu",
+      "description": "Zde přijde text o ubytování. Popis dostupných pokojů, vybavení a atmosféry.",
+      "features": [
+        "Pokoje s výhledem na pivovar",
+        "Možnost snídaně",
+        "Wi-Fi zdarma"
+        // Doplň další výhody
+      ],
+      "booking_link": "https://rezervace.kocour.cz"
+    },
+    "akce": {
+      "headline": "Co nás čeká",
+      "events": [
+        {
+          "title": "Pivní slavnosti",
+          "date": "2026-06-15",
+          "time": "14:00",
+          "location": "Nádvoří pivovaru",
+          "description": "Celodenní akce s živou hudbou, speciálními pivy a bohatým občerstvením."
+        },
+        {
+          "title": "Degustace nových piv",
+          "date": "2026-07-20",
+          "time": "18:30",
+          "location": "Pivovarská restaurace",
+          "description": "Ochutnávka limitovaných edicí s výkladem sládka."
+        }
+      ]
+    },
+    "kontakty": {
+      "headline": "Najdete nás ve Varnsdorfu",
+      "address": {
+        "street": "Rumburská 88",
+        "city": "Varnsdorf",
+        "zip_code": "407 47",
+        "country": "Česká republika"
+      },
+      "email": "info@pivovarkocour.cz",
+      "phone": "+420 412 371 008",
+      "social_media": [
+        {
+          "platform": "Facebook",
+          "url": "https://facebook.com/PivovarKocour"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://instagram.com/pivovarkocour"
+        }
+      ]
+    }
+  }
+}
