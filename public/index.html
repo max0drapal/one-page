@@ -3,60 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pivovar Kocour Varnsdorf</title>
+    <title>Pivovar Kocour | Moderní zážitek</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="header">
         <nav class="nav">
-            <a href="#o-nas">O Nás</a>
-            <a href="#nabidka">Výběr Nápojů</a>
-            <a href="#akce">Akce</a>
-            <a href="#ubytovani">Ubytování</a>
-            <a href="#kontakty">Kontakty</a>
+            <ul>
+                <li><a href="#o-nas">O nás</a></li>
+                <li><a href="#nabidka">Pivo</a></li>
+                <li><a href="#akce">Akce</a></li>
+                <li><a href="#ubytovani">Spaní</a></li>
+                <li><a href="#kontakty">Kontakt</a></li>
+                <li><button id="theme-toggle" class="theme-btn">🌓</button></li>
+            </ul>
         </nav>
-        
-        <div class="hero-section" id="uvod">
-            <img src="cesta/k/logu.png" alt="Logo Pivovar Kocour Varnsdorf" class="logo">
-            <h1>Pivovar Kocour: Kde se vaří zážitek</h1>
-            </div>
     </header>
+
+    <section class="hero-section" id="uvod">
+        <h1>Pivovar Kocour</h1>
+        <p>REDEFINICE PIVNÍ KULTURY</p>
+    </section>
 
     <main>
         <section id="o-nas" class="section">
-            <h2>Příběh Kocoura</h2>
-            <p>Stručný popis o historii pivovaru a jeho poslání...</p>
+            <h2>Příběh</h2>
+            <p>Jsme víc než pivovar. Jsme komunita milovníků poctivého řemesla z Varnsdorfu.</p>
         </section>
 
-        <section id="nabidka" class="section dark-bg">
-            <h2>Naše nabídka: Piva & Limonády</h2>
-            <div id="piva-container" class="grid-layout">
-                </div>
+        <section id="nabidka" class="section">
+            <h2>Naše Speciály</h2>
+            <div id="piva-container" class="grid-layout"></div>
         </section>
 
         <section id="akce" class="section">
-            <h2>Aktuální a nadcházející Akce</h2>
-            <div class="akce-layout">
+            <h2>Aktuální Akce</h2>
+            <div class="grid-layout">
+                <div class="card">
+                    <h3>Pivní festival</h3>
+                    <p>Největší událost sezóny v našem areálu.</p>
                 </div>
+                <div class="card">
+                    <h3>Prohlídky</h3>
+                    <p>Podívejte se, jak vzniká pravý Kocour.</p>
+                </div>
+            </div>
         </section>
-        
-        <section id="ubytovani" class="section dark-bg">
-            <h2>Ubytování v pivovaru</h2>
-            <p>Popis nabídky, fotografií, atd.</p>
+
+        <section id="ubytovani" class="section">
+            <h2>Unikátní spaní</h2>
+            <div class="grid-layout">
+                <div class="card">
+                    <h3>Vagón Hotel</h3>
+                    <p>Legendární přespání v lůžkových vozech.</p>
+                </div>
+                <div class="card">
+                    <h3>Penzion</h3>
+                    <p>Komfortní pokoje s výhledem na pivovar.</p>
+                </div>
+            </div>
         </section>
 
         <section id="kontakty" class="section">
-            <h2>Kontakt a Registrace (Newsletter)</h2>
-            <div class="kontakt-content">
-                <form id="registrace-form">
-                    </form>
-            </div>
+            <h2>Zůstaňme v kontaktu</h2>
+            <form id="registrace-form"></form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Pivovar Kocour. Všechna práva vyhrazena.</p>
+        <p>&copy; 2026 Pivovar Kocour Varnsdorf</p>
     </footer>
 
     <script src="script.js"></script>
