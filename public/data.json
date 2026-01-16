@@ -1,0 +1,12 @@
+[
+    { "nazev": "Kocour 12°", "popis": "Tradiční světlý ležák.", "cena": "45 Kč", "foto": "kocour-12.jpg" },
+    { "nazev": "IPA Samuraj", "popis": "Silně chmelená IPA.", "cena": "58 Kč", "foto": "ipa-samuraj.jpg" },
+    { "nazev": "Sumeček", "popis": "Lehký American Pale Ale.", "cena": "52 Kč", "foto": "sumecek.jpg" },
+    { "nazev": "Hell 1846", "popis": "Světlé pivo typu Helles.", "cena": "47 Kč", "foto": "hell-1846.jpg" },
+    { "nazev": "Višňové pivo", "popis": "Osvěžující ovocné pivo.", "cena": "55 Kč", "foto": "visnove.jpg" },
+    { "nazev": "Porter 19°", "popis": "Extra silné tmavé pivo.", "cena": "62 Kč", "foto": "porter.jpg" },
+    { "nazev": "Pšeničné", "popis": "Svěží pivo bavorského typu.", "cena": "48 Kč", "foto": "psenicne.jpg" },
+    { "nazev": "Kocour 16° Bock", "popis": "Silný německý speciál.", "cena": "56 Kč", "foto": "bock-16.jpg" },
+    { "nazev": "Kocour Tom Cat", "popis": "Nealkoholické pivo.", "cena": "40 Kč", "foto": "nealko-tomcat.jpg" },
+    { "nazev": "Vánoční speciál", "popis": "Sváteční pivo s kořením.", "cena": "59 Kč", "foto": "vanocni.jpg" }
+]
