@@ -1,178 +1,214 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 :root {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --gold: #f39c12;
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-color: #0d0d0d;
+    --text-color: #f2f2f2; 
+    --gold: #f1c40f;
+    --card-bg: rgba(255, 255, 255, 0.04); 
+    --border: rgba(255, 255, 255, 0.1);
 }
 
 body.light-mode {
-    --bg-color: #f4f4f4;
-    --text-color: #121212;
-    --card-bg: rgba(0, 0, 0, 0.05);
-    --glass-border: rgba(0, 0, 0, 0.1);
+    --bg-color: #ffffff; 
+    --text-color: #1a1a1a;
+    --card-bg: rgba(0, 0, 0, 0.05); 
+    --border: rgba(0, 0, 0, 0.1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 80px; 
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    transition: 0.3s; 
+    line-height: 1.6; 
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: var(--bg-color);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
-    opacity: 0.95;
-}
-
-.nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 20px;
-}
-
-.nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 400;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.nav a:hover, .nav a.active {
-    color: var(--gold);
-}
-
-.theme-btn {
-    background: none;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    cursor: pointer;
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin-left: 20px;
-    transition: 0.3s;
-}
-
-.theme-btn:hover {
-    background: var(--gold);
-    color: #000;
-}
-
+/* Hero sekce s pozadím */
 .hero-section {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('https://images.unsplash.com/photo-1550341914-878613683007?auto=format&fit=crop&q=80&w=1920');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/uvod.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
 }
 
-.hero-section h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 700;
-    letter-spacing: 5px;
-    color: #fff;
+.hero-section h1 { 
+    font-size: clamp(2.5rem, 8vw, 5rem); 
+    color: #fff; 
+    text-transform: uppercase; 
+    letter-spacing: 5px; 
 }
 
-.section {
-    min-height: 100vh;
-    padding: 100px 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Navigace */
+.header { 
+    position: fixed; 
+    top: 0; width: 100%; 
+    z-index: 1000; 
+    background: var(--bg-color); 
+    border-bottom: 1px solid var(--border); 
+    backdrop-filter: blur(8px); 
+}
+
+.nav ul { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    list-style: none; 
+    padding: 15px; 
+}
+
+.nav a { 
+    color: var(--text-color); 
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+}
+
+.nav a:hover, .nav a.active { 
+    color: var(--gold); 
+}
+
+/* Slider stylizace */
+.slider-wrapper { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    max-width: 1100px; 
+    margin: 40px auto; 
+}
+
+.slider-container { 
+    display: flex; 
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+    gap: 20px; 
+    padding: 20px 5px; 
+    width: 100%; 
+}
+
+.beer-card { 
+    min-width: 280px; 
+    background: var(--card-bg); 
+    border: 1px solid var(--border); 
+    border-radius: 15px; 
+    text-align: center; 
+    padding-bottom: 20px; 
+}
+
+.beer-card img { 
+    width: 100%; 
+    height: 280px; 
+    object-fit: contain; 
+    padding: 15px; 
+}
+
+.slider-arrow { 
+    background: var(--gold); 
+    border: none; 
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    font-size: 1.2rem; 
+}
+
+/* Sekce a mřížky */
+.section { 
+    min-height: 100vh; 
+    padding: 100px 8%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.container { 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.grid-layout { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; margin-top: 40px; 
+}
+
+.card { 
+    background: var(--card-bg); 
+    border-radius: 15px; 
+    border: 1px solid var(--border); 
+    overflow: hidden; 
+    text-align: left; 
+    transition: 0.3s; 
+}
+
+.card-with-img img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.card-content { 
+    padding: 20px; 
+}
+
+.about-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 40px; 
+    text-align: left; 
+}
+
+.about-image img { 
+    width: 100%; 
+    border-radius: 15px; 
+}
+
+/* Formulář */
+.contact-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; max-width: 500px; 
+    margin: 30px auto; 
+}
+
+input, textarea { 
+    padding: 15px; 
+    border-radius: 8px; 
+    border: 1px solid var(--border); 
+    background: var(--card-bg); 
+    color: var(--text-color); 
+}
+
+button[type="submit"] { 
+    background: var(--gold); 
+    border: none; 
+    padding: 15px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    border-radius: 8px; 
+}
+
+footer { 
+    padding: 40px; 
     text-align: center;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    width: 100%;
-    max-width: 1100px;
-}
-
-.card {
-    background: var(--card-bg);
-    border: 1px solid var(--glass-border);
-    padding: 30px;
-    border-radius: 15px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold);
-}
-
-#registrace-form {
-    display: flex;
-    gap: 10px;
-    width: 100%;
-    max-width: 400px;
-}
-
-input {
-    flex: 1;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid var(--glass-border);
-    background: var(--card-bg);
-    color: var(--text-color);
-}
-
-button[type="submit"] {
-    padding: 12px 25px;
-    border-radius: 8px;
-    border: none;
-    background: var(--gold);
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-footer {
-    padding: 40px;
-    text-align: center;
-    border-top: 1px solid var(--glass-border);
-}
-
-@media (max-width: 768px) {
-    .nav ul { flex-wrap: wrap; }
-    .nav li { margin-bottom: 10px; }
+    opacity: 0.7; 
 }
