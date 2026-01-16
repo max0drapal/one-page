@@ -1,59 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Dark/Light mode
     const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.nav a');
-
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'light') {
-        body.classList.add('light-mode');
-    }
-
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
     themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
     });
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            if (pageYOffset >= (section.offsetTop - 150)) {
-                current = section.getAttribute('id');
+    // AJAX Načtení piva ze JSON
+    const fetchBeers = () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'data.json', true);
+        xhr.onload = function() {
+            if (this.status === 200) {
+                const beers = JSON.parse(this.responseText);
+                const container = document.getElementById('piva-container');
+                container.innerHTML = beers.map(beer => `
+                    <div class="beer-card">
+                        <img src="img/${beer.foto}" alt="${beer.nazev}">
+                        <div class="card-content">
+                            <h3 style="color: var(--gold)">${beer.nazev}</h3>
+                            <p style="font-size: 0.9rem; margin: 10px 0;">${beer.popis}</p>
+                            <div style="font-weight: bold;">${beer.cena}</div>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Šipky slideru
+                document.getElementById('next-beer').onclick = () => container.scrollLeft += 300;
+                document.getElementById('prev-beer').onclick = () => container.scrollLeft -= 300;
             }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
+        };
+        xhr.send();
+    };
+    fetchBeers();
+
+    // AJAX odeslání formuláře
+    const form = document.getElementById('ajax-form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const status = document.getElementById('form-status');
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'backend.php?action=save_contact', true);
+        xhr.onload = function() {
+            const res = JSON.parse(this.responseText);
+            status.innerHTML = `<p style="color: var(--gold); margin-top:10px;">${res.message}</p>`;
+            if(res.status === 'success') form.reset();
+        };
+        xhr.send(new FormData(this));
     });
-
-    const pivaContainer = document.getElementById('piva-container');
-    if (pivaContainer) {
-        const piva = [
-            { n: "Kocour 12°", p: "Světlý ležák, vlajková loď." },
-            { n: "Kocour IPA", p: "Svrchně kvašený speciál." },
-            { n: "Stout", p: "Tmavý speciál s tóny kávy." }
-        ];
-        pivaContainer.innerHTML = piva.map(p => `
-            <div class="card">
-                <h3>${p.n}</h3>
-                <p>${p.p}</p>
-            </div>
-        `).join('');
-    }
-
-    const form = document.getElementById('registrace-form');
-    if (form) {
-        form.innerHTML = `
-            <input type="email" placeholder="Váš e-mail" required>
-            <button type="submit">Odebírat</button>
-        `;
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Děkujeme!');
-            form.reset();
-        });
-    }
 });
