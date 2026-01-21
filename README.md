@@ -8,7 +8,7 @@ Webové představení pivovaru Kocour. Stránka bude na způsob one-page webu s 
 Obyvatelé Varnsdorfu a milovníci piva.
 # Návrh obsahových sekcí
 - o nás
-- výběr piv a limonád
+- výběr piv
 - ubytováni
 - akce
 - kontakty
